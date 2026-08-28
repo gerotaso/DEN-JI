@@ -8,6 +8,16 @@ const state = {
 };
 
 const $ = id => document.getElementById(id);
+const columnLabels = {
+  id: "顧客ID",
+  name: "氏名",
+  company: "会社名",
+  postal_code: "郵便番号",
+  address: "住所",
+  tel: "電話番号",
+  email: "メール",
+  note: "備考"
+};
 
 function escapeHtml(v) {
   return String(v ?? "").replace(/[&<>"']/g, c => ({
@@ -64,7 +74,7 @@ function render() {
 
   const thead = $("customerTable").querySelector("thead");
   const tbody = $("customerTable").querySelector("tbody");
-  thead.innerHTML = `<tr><th class="check">印刷</th>${state.columns.map(c=>`<th>${escapeHtml(c)}</th>`).join("")}</tr>`;
+  thead.innerHTML = `<tr><th class="check">印刷</th>${state.columns.map(c=>`<th>${escapeHtml(columnLabels[c] || c)}</th>`).join("")}</tr>`;
   tbody.innerHTML = visible.map(({r,i}) => `
     <tr class="customer-row" data-index="${i}">
       <td class="check"><input type="checkbox" class="print-check" data-index="${i}" onclick="event.stopPropagation()"></td>
@@ -220,12 +230,12 @@ function printPostcards() {
       html,body { margin:0; padding:0; }
       .postcard { width:100mm; height:148mm; position:relative; background:white; color:#111;
         font-family:"Yu Mincho","Hiragino Mincho ProN",serif; page-break-after:always; overflow:hidden; }
-      .postal { position:absolute; top:13mm; right:8mm; font-family:sans-serif; font-size:11pt; letter-spacing:1.5px; }
-      .address { position:absolute; top:34mm; right:19mm; width:58mm; writing-mode:vertical-rl; text-orientation:mixed;
+      .postal { position:absolute; top:12mm; left:44.2mm; font-family:sans-serif; font-size:22pt; letter-spacing:6.7pt; }
+      .address { position:absolute; top:30mm; right:10mm; width:18mm; writing-mode:vertical-rl; text-orientation:mixed;
         font-size:15pt; line-height:1.8; white-space:pre-wrap; }
-      .name { position:absolute; top:70mm; right:7mm; width:27mm; writing-mode:vertical-rl; text-orientation:mixed;
-        font-size:18pt; font-weight:600; white-space:nowrap; }
-      .company { position:absolute; top:67mm; right:38mm; width:22mm; writing-mode:vertical-rl; font-size:10pt; white-space:nowrap; }
+      .name { position:absolute; top:50mm; right:43mm; width:24mm; writing-mode:vertical-rl; text-orientation:mixed;
+        font-size:28pt; font-weight:600; white-space:nowrap; }
+      .company { position:absolute; top:35mm; right:30mm; width:22mm; writing-mode:vertical-rl; font-size:18pt; white-space:nowrap; }
     </style></head><body>${cards}</body></html>`);
   w.document.close();
   w.focus();

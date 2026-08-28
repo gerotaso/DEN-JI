@@ -82,8 +82,8 @@ dialog::backdrop { background: #0006; }
 .postcard-dialog { text-align: center; }
 .postcard-preview {
   margin: 15px auto;
-  width: 400px;
-  height: 592px;
+  width: 100mm;
+  height: 148mm;
   background: #fff;
   border: 1px solid #bbb;
   position: relative;
@@ -91,8 +91,8 @@ dialog::backdrop { background: #0006; }
   transform-origin: top center;
 }
 .postcard {
-  width: 100mm;
-  height: 148mm;
+  width: 100%;
+  height: 100%;
   position: relative;
   background: white;
   font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
@@ -100,17 +100,17 @@ dialog::backdrop { background: #0006; }
 }
 .postcard .postal {
   position: absolute;
-  top: 13mm;
-  right: 8mm;
+  top: 12mm;
+  left: 44.2mm;
   font-family: sans-serif;
-  font-size: 11pt;
-  letter-spacing: 1.5px;
+  font-size:22pt;
+  letter-spacing: 6.7pt;
 }
 .postcard .address {
   position: absolute;
-  top: 34mm;
-  right: 19mm;
-  width: 58mm;
+  top: 30mm;
+  right: 10mm;
+  width: 18mm;
   writing-mode: vertical-rl;
   text-orientation: mixed;
   font-size: 15pt;
@@ -119,22 +119,22 @@ dialog::backdrop { background: #0006; }
 }
 .postcard .name {
   position: absolute;
-  top: 70mm;
-  right: 7mm;
-  width: 27mm;
+  top: 50mm;
+  right: 43mm;
+  width: 24mm;
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  font-size: 18pt;
+  font-size: 28pt;
   font-weight: 600;
   white-space: nowrap;
 }
 .postcard .company {
   position: absolute;
-  top: 67mm;
-  right: 38mm;
+  top: 35mm;
+  right: 30mm;
   width: 22mm;
   writing-mode: vertical-rl;
-  font-size: 10pt;
+  font-size: 18pt;
   white-space: nowrap;
 }
 .postcard .sample-note {
