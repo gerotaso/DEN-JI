@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>顧客管理・はがき宛名印刷 Prototype</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>DEN-JI 顧客管理システム</h1>
+  <div class="toolbar">
+    <button id="openCsvBtn">CSVを開く</button>
+    <button id="saveCsvBtn" disabled>CSVを保存</button>
+    <button id="newBtn">新規登録</button>
+    <button id="postcardBtn" disabled>はがき宛名PDF</button>
+    <input id="csvFileInput" type="file" accept=".csv,text/csv" hidden>
+    <span id="fileStatus">CSV未選択</span>
+  </div>
+</header>
+
+<main>
+  <section class="panel">
+    <div class="searchbar">
+      <input id="searchInput" type="search" placeholder="氏名・会社名・電話番号・住所などで検索">
+      <button id="clearSearchBtn">クリア</button>
+    </div>
+    <div class="selectionbar">
+      <span id="countLabel">0件</span>
+      <span class="hint">行をクリックすると編集できます。複数選択して宛名PDFを作成できます。</span>
+    </div>
+    <div class="table-wrap">
+      <table id="customerTable">
+        <thead></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<dialog id="customerDialog">
+  <form method="dialog" id="customerForm">
+    <h2 id="dialogTitle">顧客登録</h2>
+    <div class="form-grid">
+      <label>顧客ID<input name="id" required></label>
+      <label>氏名<input name="name" required></label>
+      <label>会社名<input name="company"></label>
+      <label>郵便番号<input name="postal_code" placeholder="100-0001"></label>
+      <label class="wide">住所<input name="address"></label>
+      <label>電話番号<input name="tel"></label>
+      <label>メール<input name="email" type="email"></label>
+      <label class="wide">備考<textarea name="note" rows="4"></textarea></label>
+    </div>
+    <div class="dialog-actions">
+      <button type="button" id="deleteBtn" class="danger">削除</button>
+      <span class="spacer"></span>
+      <button type="button" id="cancelBtn">キャンセル</button>
+      <button type="submit" class="primary">保存</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="postcardDialog">
+  <div class="postcard-dialog">
+    <h2>はがき宛名印刷</h2>
+    <p id="postcardInfo"></p>
+    <div id="postcardPreview" class="postcard-preview"></div>
+    <div class="dialog-actions">
+      <button type="button" id="postcardCancelBtn">閉じる</button>
+      <button type="button" id="printBtn" class="primary">印刷 / PDF保存</button>
+    </div>
+  </div>
+</dialog>
+
+<script src="app.js"></script>
+</body>
+</html>

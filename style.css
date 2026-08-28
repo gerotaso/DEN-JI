@@ -1,0 +1,151 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Yu Gothic", "Meiryo", sans-serif;
+  color: #222;
+  background: #f5f6f8;
+}
+header {
+  padding: 18px 24px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+h1 { margin: 0 0 12px; font-size: 24px; }
+h2 { margin-top: 0; }
+.toolbar, .searchbar, .selectionbar, .dialog-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+button {
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  background: #fff;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+button:hover { background: #f0f0f0; }
+button:disabled { opacity: .5; cursor: not-allowed; }
+button.primary { background: #222; color: #fff; border-color: #222; }
+button.danger { color: #b00020; border-color: #d99; }
+#fileStatus { margin-left: auto; color: #666; font-size: 13px; }
+main { padding: 20px 24px; }
+.panel {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+}
+.searchbar input {
+  flex: 1;
+  max-width: 650px;
+  padding: 9px 12px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  font-size: 15px;
+}
+.selectionbar { margin: 12px 0; }
+#countLabel { font-weight: 700; }
+.hint { color: #777; font-size: 13px; }
+.table-wrap { overflow: auto; max-height: 65vh; }
+table { width: 100%; border-collapse: collapse; min-width: 850px; }
+th, td { border-bottom: 1px solid #eee; padding: 9px 10px; text-align: left; }
+th { position: sticky; top: 0; background: #ccdcfb; z-index: 1; }
+tr.customer-row { cursor: pointer; }
+tr.customer-row:hover { background: #f8fbff; }
+td.check { width: 42px; text-align: center; }
+dialog {
+  border: 0;
+  border-radius: 10px;
+  padding: 22px;
+  width: min(760px, 92vw);
+  box-shadow: 0 10px 40px #0003;
+}
+dialog::backdrop { background: #0006; }
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.form-grid label { display: flex; flex-direction: column; gap: 5px; font-weight: 600; }
+.form-grid input, .form-grid textarea {
+  font: inherit;
+  padding: 8px;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  font-weight: normal;
+}
+.wide { grid-column: 1 / -1; }
+.dialog-actions { margin-top: 18px; }
+.spacer { flex: 1; }
+
+.postcard-dialog { text-align: center; }
+.postcard-preview {
+  margin: 15px auto;
+  width: 400px;
+  height: 592px;
+  background: #fff;
+  border: 1px solid #bbb;
+  position: relative;
+  overflow: hidden;
+  transform-origin: top center;
+}
+.postcard {
+  width: 100mm;
+  height: 148mm;
+  position: relative;
+  background: white;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  color: #111;
+}
+.postcard .postal {
+  position: absolute;
+  top: 13mm;
+  right: 8mm;
+  font-family: sans-serif;
+  font-size: 11pt;
+  letter-spacing: 1.5px;
+}
+.postcard .address {
+  position: absolute;
+  top: 34mm;
+  right: 19mm;
+  width: 58mm;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 15pt;
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+.postcard .name {
+  position: absolute;
+  top: 70mm;
+  right: 7mm;
+  width: 27mm;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 18pt;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.postcard .company {
+  position: absolute;
+  top: 67mm;
+  right: 38mm;
+  width: 22mm;
+  writing-mode: vertical-rl;
+  font-size: 10pt;
+  white-space: nowrap;
+}
+.postcard .sample-note {
+  position: absolute;
+  left: 5mm;
+  bottom: 4mm;
+  font-family: sans-serif;
+  font-size: 6pt;
+  color: #999;
+}
+@media (max-width: 800px) {
+  .form-grid { grid-template-columns: 1fr; }
+  .wide { grid-column: auto; }
+}
