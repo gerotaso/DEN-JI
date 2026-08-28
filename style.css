@@ -119,8 +119,8 @@ dialog::backdrop { background: #0006; }
 }
 .postcard .name {
   position: absolute;
-  top: 35mm;
-  right: 50mm;
+  top: 50mm;
+  right: 43mm;
   width: 24mm;
   writing-mode: vertical-rl;
   text-orientation: mixed;
