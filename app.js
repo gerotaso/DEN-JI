@@ -220,12 +220,12 @@ function printPostcards() {
       html,body { margin:0; padding:0; }
       .postcard { width:100mm; height:148mm; position:relative; background:white; color:#111;
         font-family:"Yu Mincho","Hiragino Mincho ProN",serif; page-break-after:always; overflow:hidden; }
-      .postal { position:absolute; top:13mm; right:8mm; font-family:sans-serif; font-size:11pt; letter-spacing:1.5px; }
-      .address { position:absolute; top:34mm; right:9mm; width:18mm; writing-mode:vertical-rl; text-orientation:mixed;
+      .postal { position:absolute; top:12mm; left:44.2mm; font-family:sans-serif; font-size:22pt; letter-spacing:6.7pt; }
+      .address { position:absolute; top:30mm; right:10mm; width:18mm; writing-mode:vertical-rl; text-orientation:mixed;
         font-size:15pt; line-height:1.8; white-space:pre-wrap; }
-      .name { position:absolute; top:70mm; right:62mm; width:24mm; writing-mode:vertical-rl; text-orientation:mixed;
-        font-size:18pt; font-weight:600; white-space:nowrap; }
-      .company { position:absolute; top:67mm; right:35mm; width:22mm; writing-mode:vertical-rl; font-size:10pt; white-space:nowrap; }
+      .name { position:absolute; top:50mm; right:43mm; width:24mm; writing-mode:vertical-rl; text-orientation:mixed;
+        font-size:28pt; font-weight:600; white-space:nowrap; }
+      .company { position:absolute; top:35mm; right:30mm; width:22mm; writing-mode:vertical-rl; font-size:18pt; white-space:nowrap; }
     </style></head><body>${cards}</body></html>`);
   w.document.close();
   w.focus();
