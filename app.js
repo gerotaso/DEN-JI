@@ -221,11 +221,11 @@ function printPostcards() {
       .postcard { width:100mm; height:148mm; position:relative; background:white; color:#111;
         font-family:"Yu Mincho","Hiragino Mincho ProN",serif; page-break-after:always; overflow:hidden; }
       .postal { position:absolute; top:13mm; right:8mm; font-family:sans-serif; font-size:11pt; letter-spacing:1.5px; }
-      .address { position:absolute; top:34mm; right:19mm; width:58mm; writing-mode:vertical-rl; text-orientation:mixed;
+      .address { position:absolute; top:34mm; right:9mm; width:18mm; writing-mode:vertical-rl; text-orientation:mixed;
         font-size:15pt; line-height:1.8; white-space:pre-wrap; }
-      .name { position:absolute; top:70mm; right:7mm; width:27mm; writing-mode:vertical-rl; text-orientation:mixed;
+      .name { position:absolute; top:70mm; right:62mm; width:24mm; writing-mode:vertical-rl; text-orientation:mixed;
         font-size:18pt; font-weight:600; white-space:nowrap; }
-      .company { position:absolute; top:67mm; right:38mm; width:22mm; writing-mode:vertical-rl; font-size:10pt; white-space:nowrap; }
+      .company { position:absolute; top:67mm; right:35mm; width:22mm; writing-mode:vertical-rl; font-size:10pt; white-space:nowrap; }
     </style></head><body>${cards}</body></html>`);
   w.document.close();
   w.focus();

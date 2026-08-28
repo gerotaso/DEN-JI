@@ -109,8 +109,8 @@ dialog::backdrop { background: #0006; }
 .postcard .address {
   position: absolute;
   top: 34mm;
-  right: 19mm;
-  width: 58mm;
+  right: 9mm;
+  width: 18mm;
   writing-mode: vertical-rl;
   text-orientation: mixed;
   font-size: 15pt;
@@ -120,8 +120,8 @@ dialog::backdrop { background: #0006; }
 .postcard .name {
   position: absolute;
   top: 70mm;
-  right: 7mm;
-  width: 27mm;
+  right: 62mm;
+  width: 24mm;
   writing-mode: vertical-rl;
   text-orientation: mixed;
   font-size: 18pt;
@@ -131,7 +131,7 @@ dialog::backdrop { background: #0006; }
 .postcard .company {
   position: absolute;
   top: 67mm;
-  right: 38mm;
+  right: 35mm;
   width: 22mm;
   writing-mode: vertical-rl;
   font-size: 10pt;
