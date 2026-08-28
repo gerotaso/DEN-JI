@@ -8,6 +8,16 @@ const state = {
 };
 
 const $ = id => document.getElementById(id);
+const columnLabels = {
+  id: "顧客ID",
+  name: "氏名",
+  company: "会社名",
+  postal_code: "郵便番号",
+  address: "住所",
+  tel: "電話番号",
+  email: "メール",
+  note: "備考"
+};
 
 function escapeHtml(v) {
   return String(v ?? "").replace(/[&<>"']/g, c => ({
@@ -64,7 +74,7 @@ function render() {
 
   const thead = $("customerTable").querySelector("thead");
   const tbody = $("customerTable").querySelector("tbody");
-  thead.innerHTML = `<tr><th class="check">印刷</th>${state.columns.map(c=>`<th>${escapeHtml(c)}</th>`).join("")}</tr>`;
+  thead.innerHTML = `<tr><th class="check">印刷</th>${state.columns.map(c=>`<th>${escapeHtml(columnLabels[c] || c)}</th>`).join("")}</tr>`;
   tbody.innerHTML = visible.map(({r,i}) => `
     <tr class="customer-row" data-index="${i}">
       <td class="check"><input type="checkbox" class="print-check" data-index="${i}" onclick="event.stopPropagation()"></td>
