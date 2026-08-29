@@ -46,6 +46,7 @@ main { padding: 20px 24px; }
 }
 .searchbar input:focus {
   border-color: #0066cc;
+  border-width: 2px;
   outline: none;
   box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
 }
@@ -82,6 +83,7 @@ dialog::backdrop { background: #0006; }
 }
 .form-grid input:focus, .form-grid textarea:focus {
   border-color: #0066cc;
+  border-width: 2px;
   outline: none;
   box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
 }
